@@ -2,7 +2,6 @@
 name = "{{project}}"
 description = "{{description}}"
 license = "{{spdx_license_identifier}}"
-license-file = "LICENSE"
 version = "{{version}}"
 edition = "2018"
 
