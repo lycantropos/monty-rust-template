@@ -1,0 +1,10 @@
+[package]
+name = "{{project}}"
+description = "{{description}}"
+license = "{{license}}"
+license-file = "LICENSE"
+version = "{{version}}"
+edition = "2018"
+
+[lib]
+name = "{{project}}"

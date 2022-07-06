@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  {{project}}:
+    build:
+      context: .
+      args:
+        - IMAGE_NAME=${IMAGE_NAME}
+        - IMAGE_VERSION=${IMAGE_VERSION}
+    image: {{dockerhub_login}}/{{project}}:{{version}}
+    volumes:
+{% for resource in [project, 'Cargo.toml', 'README.md', 'rust-toolchain.toml', 'src'] | sort %}
+      - ./{{resource}}:/opt/{{project}}/{{resource}}
+{% endfor %}
+    entrypoint: cargo test
