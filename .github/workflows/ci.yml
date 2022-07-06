@@ -47,7 +47,7 @@ jobs:
           toolchain: nightly
       - name: 'Run Rust linter'
         run: cargo fmt --check
-      - name: 'Run Rust doctests'
+      - name: 'Run doctests'
         run: cargo test --doc --target=${{ '{{ matrix.platform.rust_target }}' }}
         env:
           CARGO_INCREMENTAL: 0
@@ -58,7 +58,12 @@ jobs:
             -Zprofile -Ccodegen-units=1 -Copt-level=0 -Coverflow-checks=off
             -Zpanic_abort_tests -Cpanic=abort
       - name: 'Run tests'
-        run: cargo test
+        run: cargo test --all-targets --target=${{ '{{ matrix.platform.rust_target }}' }}
+        env:
+          CARGO_INCREMENTAL: 0
+          RUSTFLAGS: >
+            -Zprofile -Ccodegen-units=1 -Copt-level=0 -Coverflow-checks=off
+            -Zpanic_abort_tests -Cpanic=abort
       - name: 'Install coverage dependencies'
         run: cargo install grcov
         if: ${{ '{{ !startsWith(matrix.python_version, \'pypy\') }}' }}
