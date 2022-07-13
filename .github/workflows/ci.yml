@@ -128,8 +128,8 @@ jobs:
         run: cargo fmt --check
       - name: 'Setup cross-compiling dependencies'
         run: sudo apt-get install gcc-multilib
-        if: ${{ '{{ runner.os == \'Linux\' &&
-                startsWith(matrix.platform.rust_target, \'i686\') }}' }}
+        if: ${{ '{{' }} runner.os == 'Linux' &&
+                startsWith(matrix.platform.rust_target, 'i686') {{ '}}' }}
       - name: 'Run doctests'
         run: >
           cargo test --all-features --doc
