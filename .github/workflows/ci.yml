@@ -77,7 +77,7 @@ jobs:
         uses: docker/setup-qemu-action@v2
         with:
           platforms: all
-        if: ${{ runner.os == 'Linux' }}
+        if: ${{ '{{ runner.os == \'Linux\' }}' }}
       - name: 'Build'
         run: >
           cargo build --all-features
