@@ -3,6 +3,7 @@
 
 [![](https://github.com/{{github_login}}/{{project}}/workflows/CI/badge.svg)](https://github.com/{{github_login}}/{{project}}/actions/workflows/ci.yml "Github Actions")
 [![](https://codecov.io/gh/{{github_login}}/{{project}}/branch/master/graph/badge.svg)](https://codecov.io/gh/{{github_login}}/{{project}} "Codecov")
+[![](https://docs.rs/{{project}}/badge.svg)](https://docs.rs/{{project}}/ "docs.rs")
 [![](https://img.shields.io/github/license/{{github_login}}/{{project}}.svg)](https://github.com/{{github_login}}/{{project}}/blob/master/LICENSE "License")
 [![](https://img.shields.io/crates/v/{{project}}.svg)](https://crates.io/crates/{{project}} "crates.io")
 
