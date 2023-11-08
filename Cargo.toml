@@ -4,6 +4,7 @@ description = "{{description}}"
 license = "{{spdx_license_identifier}}"
 version = "{{version}}"
 edition = "2021"
+rust-version = "{{min_version_of['rust']}}"
 
 [lib]
 name = "{{project}}"
