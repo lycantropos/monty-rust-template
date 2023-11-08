@@ -70,7 +70,6 @@ jobs:
         uses: dtolnay/rust-toolchain@stable
         with:
           target: ${{ '{{ matrix.platform.rust_target }}' }}
-        if: ${{ '{{ !startsWith(matrix.python_version, 'pypy') }}' }}
       - name: 'Setup QEMU'
         uses: docker/setup-qemu-action@v3
         with:
@@ -119,7 +118,6 @@ jobs:
         with:
           components: rustfmt
           target: ${{ '{{ matrix.platform.rust_target }}' }}
-        if: ${{ '{{ !startsWith(matrix.python_version, 'pypy') }}' }}
       - name: 'Run Rust linter'
         run: cargo fmt --check
       - name: 'Setup cross-compiling dependencies'
@@ -181,7 +179,6 @@ jobs:
         uses: dtolnay/rust-toolchain@stable
         with:
           target: ${{ '{{ matrix.platform.rust_target }}' }}
-        if: ${{ '{{ !startsWith(matrix.python_version, 'pypy') }}' }}
       - name: 'Upload'
         run: cargo publish --no-verify
         env:
